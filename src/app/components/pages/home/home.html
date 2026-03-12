@@ -1,14 +1,17 @@
 <div class="home-layout">
 
   <header class="top-nav">
-    <div class="menu-btn">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-    </div>
+  <div class="menu-btn" (click)="openMenu()" style="cursor: pointer;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </div>
+
+  <div class="search-container">
     <div class="search-box">
-      <span class="search-icon">🔍</span>
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a0aec0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       <input type="text" placeholder="Etkinlik, topluluk veya mekan ara...">
     </div>
-  </header>
+  </div>
+</header>
 
   <div class="category-bar">
     <button *ngFor="let cat of categories"
@@ -20,6 +23,7 @@
   </div>
 
   <main class="content-grid">
+
     <section class="events-column">
       <app-event-card *ngFor="let evt of eventsList" [event]="evt"></app-event-card>
     </section>
@@ -31,7 +35,8 @@
           <h3>Haftanın Enleri</h3>
         </div>
         <div class="ranking-list">
-          <div class="ranking-item" *ngFor="let club of topClubs">
+
+          <div class="ranking-item" *ngFor="let club of topClubs" [routerLink]="['/club', club.id]">
             <span class="rank-number">{{ club.rank }}</span>
             <div class="club-circle" [style.backgroundColor]="club.bgColor" [style.color]="club.textColor">
               {{ club.initials }}
@@ -40,11 +45,15 @@
               <h4>{{ club.name }}</h4>
               <p>{{ club.eventCount }} etkinlik</p>
             </div>
+            <svg class="go-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
+
         </div>
       </div>
     </aside>
+
   </main>
 
   <button class="floating-btn">💬</button>
+
 </div>

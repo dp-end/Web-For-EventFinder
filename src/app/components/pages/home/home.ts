@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; // Yönlendirme için EKLENDİ
 import { EventCard } from '../../event-card/event-card';
+import { SidebarService } from '../../../services/sidebar';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, EventCard],
+  imports: [CommonModule, EventCard, RouterModule], // RouterModule EKLENDİ
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -49,11 +51,18 @@ export class Home {
     }
   ];
 
+  // Kulüplere 'id' EKLENDİ (Tıklayınca hangi sayfaya gideceğini bilmesi için)
   topClubs = [
-    { rank: 1, name: 'Bilgisayar Topluluğu', initials: 'BT', eventCount: 18, bgColor: '#eef2ff', textColor: '#4f46e5' },
-    { rank: 2, name: 'Müzik Topluluğu', initials: 'MT', eventCount: 12, bgColor: '#f0f9ff', textColor: '#0284c7' },
-    { rank: 3, name: 'Spor Topluluğu', initials: 'ST', eventCount: 24, bgColor: '#f5f3ff', textColor: '#7c3aed' }
+    { id: 101, rank: 1, name: 'Bilgisayar Topluluğu', initials: 'BT', eventCount: 18, bgColor: '#eef2ff', textColor: '#4f46e5' },
+    { id: 102, rank: 2, name: 'Müzik Topluluğu', initials: 'MT', eventCount: 12, bgColor: '#f0f9ff', textColor: '#0284c7' },
+    { id: 103, rank: 3, name: 'Spor Topluluğu', initials: 'ST', eventCount: 24, bgColor: '#f5f3ff', textColor: '#7c3aed' }
   ];
+
+  constructor(private sidebarService: SidebarService) {}
+
+  openMenu() {
+    this.sidebarService.toggleSidebar();
+  }
 
   selectCategory(category: string) {
     this.activeCategory = category;

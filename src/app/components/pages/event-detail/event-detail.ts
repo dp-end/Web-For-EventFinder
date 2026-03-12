@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router'; // URL'den ID almak için ActivatedRoute ekledik
 
 @Component({
   selector: 'app-event-detail',
@@ -10,35 +10,38 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   styleUrl: './event-detail.css'
 })
 export class EventDetail implements OnInit {
-  eventId: string | null = null;
-  event: any;
 
-  // Örnek yorumlar verisi
-  comments = [
-    { user: 'Mert Osman', text: 'Bu etkinlik için çok heyecanlıyım!', time: '2 saat önce', initials: 'MO' },
-    { user: 'Zeynep Yılmaz', text: 'Kontenjan dolmadan yerimi ayırttım, görüşmek üzere.', time: '5 saat önce', initials: 'ZY' }
-  ];
+  eventId: string | null = null;
+
+  // İleride bu veriyi Backend'den çekeceğiz! Şimdilik sahte veri kullanıyoruz.
+  event = {
+    id: 1,
+    title: 'Yapay Zeka ve Gelecek Konferansı',
+    clubName: 'Bilgisayar Topluluğu',
+    clubInitials: 'BT',
+    category: 'Teknoloji',
+    imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
+    date: '15 Mart 2026, Pazar',
+    time: '14:00 - 17:00',
+    location: 'Mühendislik Fakültesi, Konferans Salonu A',
+    price: 'Ücretsiz',
+    quota: 250,
+    registered: 180,
+    description: 'Yapay zekanın geleceği, sektördeki son gelişmeler ve kariyer fırsatları üzerine konuşacağımız bu muazzam konferansa davetlisiniz. Sektörün önde gelen isimleri tecrübelerini paylaşacak ve merak edilen soruları yanıtlayacak. Etkinlik sonunda networking imkanı ve sürpriz çekilişler olacaktır!',
+    speakers: ['Dr. Ahmet Yılmaz', 'Ayşe Demir (Senior AI Engineer)'],
+    tags: ['Yapay Zeka', 'Kariyer', 'Networking']
+  };
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // URL'deki ID'yi alıyoruz (/event/1 ise id = 1 olur)
+    // URL'deki 'id' parametresini yakalıyoruz (Örn: /event/1)
     this.eventId = this.route.snapshot.paramMap.get('id');
+    console.log('İncelenen Etkinlik ID:', this.eventId);
+  }
 
-    // Şimdilik ID'ye bakmaksızın örnek bir veri gösteriyoruz
-    // İleride burası servisten (API) gelecek
-    this.event = {
-      title: 'Yapay Zeka ve Gelecek Konferansı',
-      imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-      clubName: 'Bilgisayar Topluluğu',
-      clubInitials: 'BT',
-      date: '15 Mart 2026 - 14:00',
-      location: 'Konferans Salonu A',
-      capacity: '150 / 200',
-      description: 'Yapay zeka dünyasındaki son gelişmeleri, ChatGPT ve üretken yapay zeka modellerinin geleceğini sektörün öncü isimleriyle tartışacağımız bu konferansı kaçırmayın. Etkinlik sonunda sertifika verilecektir.',
-      likes: 124,
-      commentsCount: 32,
-      price: 'Ücretsiz'
-    };
+  buyTicket() {
+    alert('Harika! Biletiniz başarıyla alındı. Biletlerim sayfasından kontrol edebilirsiniz.');
+    // İleride burada Backend'e "Bilet Al" (POST) isteği atacağız.
   }
 }

@@ -1,0 +1,138 @@
+.create-event-container {
+  max-width: 800px; /* Form çok yayılmasın diye ortada tutuyoruz */
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Başlık */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #4a5568; transition: background 0.2s;
+}
+.back-btn:hover { background: #f8fafc; }
+
+.page-header h2 { margin: 0; font-size: 1.5rem; color: #1a202c; }
+
+/* Form Konteyneri */
+.form-wrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+/* 1. Yükleme Alanı Tasarımı (Kesik Çizgili) */
+.upload-area {
+  background-color: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  transition: all 0.2s;
+}
+
+.upload-area:hover {
+  border-color: #007bff;
+  background-color: #f0f7ff;
+}
+
+.upload-icon { color: #64748b; margin-bottom: 10px; }
+.upload-content h4 { margin: 0 0 8px 0; color: #1a202c; font-size: 1.1rem; }
+.upload-content p { margin: 0 0 20px 0; color: #94a3b8; font-size: 0.85rem; }
+
+.text-success { color: #10b981 !important; }
+
+/* Gizli input */
+.hidden-input { display: none; }
+
+/* Dosya Seç Butonu */
+.select-file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.select-file-btn:hover { background: #f1f5f9; border-color: #94a3b8; }
+
+/* 2. Form Elemanları */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1; /* Yan yana geldiklerinde eşit yer kaplamaları için */
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1a202c;
+  background-color: white;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Odaklanınca etrafında çıkan mavi parlama */
+}
+
+/* Yan yana duran inputlar (Saat/Tarih, Kontenjan/Fiyat) */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Yükle Butonu (Ana Mavi Buton) */
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}

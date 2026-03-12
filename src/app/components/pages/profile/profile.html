@@ -1,0 +1,41 @@
+<div class="profile-container">
+
+  <header class="page-header">
+    <button class="back-btn" routerLink="/home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </button>
+  </header>
+
+  <div class="profile-header-section">
+    <div class="cover-photo"></div>
+
+    <div class="profile-info-content">
+      <div class="avatar-large">{{ user.initials }}</div>
+
+      <h1 class="user-name">{{ user.name }}</h1>
+      <p class="user-bio">{{ user.bio }}</p>
+
+      <div class="user-details-row">
+        <span>🎓 {{ user.department }}</span>
+        <span>📍 {{ user.university }}</span>
+        <span>📅 {{ user.year }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shared-section">
+    <h3 class="section-title">Paylaşılanlar</h3>
+
+    <div class="shared-item" *ngFor="let event of sharedEvents">
+
+      <div class="repost-label">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+        {{ user.name }} paylaştı
+      </div>
+
+      <app-event-card [event]="event"></app-event-card>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,195 @@
+.dark-sidebar {
+  width: 280px;
+  height: 100vh;
+  background-color: #0f172a; /* Derin lacivert/siyah */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Logo Alanı */
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-section h2 { margin: 0; font-size: 1.25rem; font-weight: 700; color: white; }
+
+/* Üniversite Seçici */
+.uni-selector {
+  background-color: #1e293b;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  transition: background 0.2s;
+}
+
+.uni-selector:hover { background-color: #334155; }
+
+/* Etkinlik Oluştur Butonu */
+.create-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 35px;
+  transition: background 0.2s;
+}
+
+.create-btn:hover { background-color: #0056b3; }
+
+/* Navigasyon */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1; /* Alt kısmı aşağı itmek için alanı doldurur */
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 16px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.nav-item-between {
+  justify-content: space-between;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-icon { width: 22px; height: 22px; }
+
+.nav-links a:hover, .nav-links a.active {
+  background-color: #1e293b;
+  color: white;
+}
+
+/* Bildirim Rozeti */
+.badge {
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* Alt Kullanıcı Alanı */
+.user-footer {
+  border-top: 1px solid #334155;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #1e293b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.user-details h4 { margin: 0; font-size: 0.95rem; color: white; }
+.user-details p { margin: 2px 0 0 0; font-size: 0.75rem; color: #94a3b8; }
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover { color: #ef4444; }
+/* ARKAPLAN KARARTMASI */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 999; /* Menünün bir tık altında */
+}
+
+/* MENÜNÜN KENDİSİ */
+.dark-sidebar {
+  position: fixed; /* Ekranda serbest hareket etmesi için fixed yapıyoruz */
+  top: 0;
+  left: -320px; /* Başlangıçta ekranın solunda saklı duruyor */
+  width: 280px;
+  height: 100vh;
+  background-color: #0f172a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  z-index: 1000; /* Her şeyin üstünde görünmesi için */
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Kayma efekti */
+  box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+}
+
+/* AÇIK DURUMU (active class'ı eklenince devreye girer) */
+.dark-sidebar.active {
+  left: 0; /* Ekranın içine giriyor */
+}
+
+/* -- Geri kalan .brand-section, .uni-selector vb. kodların aynı kalabilir -- */

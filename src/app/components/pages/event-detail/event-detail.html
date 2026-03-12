@@ -1,82 +1,85 @@
-<div class="detail-wrapper" *ngIf="event">
-  <button class="back-btn" routerLink="/home">← Geri Dön</button>
+<div class="event-detail-page">
 
-  <div class="detail-card">
-    <div class="hero-image">
-      <img [src]="event.imageUrl" [alt]="event.title">
-      <span class="price-tag">{{ event.price }}</span>
+  <div class="cover-section" [style.backgroundImage]="'url(' + event.imageUrl + ')'">
+    <div class="overlay"></div>
+
+    <button class="back-btn" routerLink="/home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </button>
+
+    <div class="cover-content">
+      <span class="category-badge">{{ event.category }}</span>
+      <h1>{{ event.title }}</h1>
     </div>
+  </div>
+
+  <div class="content-container">
 
     <div class="main-content">
-      <div class="club-header">
-        <div class="club-avatar">{{ event.clubInitials }}</div>
-        <div class="club-meta">
+
+      <div class="club-row" routerLink="/club/101">
+        <div class="club-logo">{{ event.clubInitials }}</div>
+        <div class="club-info">
+          <span>Düzenleyen Topluluk</span>
           <h4>{{ event.clubName }}</h4>
-          <p>Organizatör Topluluk</p>
         </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </div>
 
-      <h1 class="event-title">{{ event.title }}</h1>
-
-      <div class="info-grid">
-        <div class="info-item">
-          <span class="info-icon">📅</span>
-          <div>
-            <label>Tarih ve Saat</label>
-            <p>{{ event.date }}</p>
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="icon-box">📅</div>
+          <div class="detail-text">
+            <label>Tarih & Saat</label>
+            <p>{{ event.date }} <br> {{ event.time }}</p>
           </div>
         </div>
-        <div class="info-item">
-          <span class="info-icon">📍</span>
-          <div>
+
+        <div class="detail-card">
+          <div class="icon-box">📍</div>
+          <div class="detail-text">
             <label>Konum</label>
             <p>{{ event.location }}</p>
           </div>
         </div>
-        <div class="info-item">
-          <span class="info-icon">👥</span>
-          <div>
-            <label>Kontenjan</label>
-            <p>{{ event.capacity }} Katılımcı</p>
-          </div>
-        </div>
       </div>
 
-      <section class="description">
+      <div class="about-section">
         <h3>Etkinlik Hakkında</h3>
         <p>{{ event.description }}</p>
-      </section>
 
-      <div class="action-bar">
-        <div class="stats">
-          <div class="stat-item">❤️ {{ event.likes }} Beğeni</div>
-          <div class="stat-item">💬 {{ event.commentsCount }} Yorum</div>
+        <h4>Konuşmacılar</h4>
+        <ul class="speakers-list">
+          <li *ngFor="let speaker of event.speakers">🎙️ {{ speaker }}</li>
+        </ul>
+
+        <div class="tags-row">
+          <span class="tag" *ngFor="let tag of event.tags">#{{ tag }}</span>
         </div>
-        <button class="reserve-btn">Rezervasyon Yap</button>
       </div>
 
-      <hr class="divider">
-
-      <section class="comments-section">
-        <h3>Yorumlar</h3>
-        <div class="comment-box">
-          <input type="text" placeholder="Düşüncelerini paylaş...">
-          <button class="send-btn">Gönder</button>
-        </div>
-
-        <div class="comments-list">
-          <div class="comment-card" *ngFor="let comment of comments">
-            <div class="user-avatar">{{ comment.initials }}</div>
-            <div class="comment-body">
-              <div class="comment-header">
-                <strong>{{ comment.user }}</strong>
-                <span>{{ comment.time }}</span>
-              </div>
-              <p>{{ comment.text }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
+
+    <aside class="ticket-sidebar">
+      <div class="ticket-card">
+        <h3>Bilet Al</h3>
+
+        <div class="price-row">
+          <span class="price-label">Fiyat</span>
+          <span class="price-value" [class.free]="event.price === 'Ücretsiz'">{{ event.price }}</span>
+        </div>
+
+        <div class="quota-info">
+          <div class="quota-bar">
+            <div class="progress" [style.width]="(event.registered / event.quota) * 100 + '%'"></div>
+          </div>
+          <p><strong>{{ event.registered }}</strong> / {{ event.quota }} kişi kayıt oldu</p>
+        </div>
+
+        <button class="buy-btn" (click)="buyTicket()">Hemen Kaydol</button>
+        <p class="secure-text">🔒 Güvenli işlem</p>
+      </div>
+    </aside>
+
   </div>
 </div>
