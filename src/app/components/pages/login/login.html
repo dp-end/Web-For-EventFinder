@@ -14,6 +14,10 @@
       </div>
     </div>
 
+    <div *ngIf="errorMessage" class="error-container global-error" style="background-color: #ffe6e6; color: #d8000c; padding: 10px; border-radius: 5px; margin-bottom: 15px; text-align: center; font-size: 14px; border: 1px solid #ffcccc;">
+      {{ errorMessage }}
+    </div>
+
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
@@ -34,6 +38,7 @@
         <div class="error-container" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
           <small class="error-msg" *ngIf="loginForm.get('password')?.errors?.['required']">Şifre zorunludur.</small>
           <small class="error-msg" *ngIf="loginForm.get('password')?.errors?.['minlength']">En az 8 karakter olmalı.</small>
+          <small class="error-msg" *ngIf="loginForm.get('password')?.errors?.['pattern']">Şifre en az 1 büyük harf ve 1 özel karakter içermelidir.</small>
         </div>
       </div>
 
