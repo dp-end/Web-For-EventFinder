@@ -28,3 +28,14 @@ Proje **Clean Architecture** prensipleri üzerine inşa edilmiştir:
 2. `appsettings.json` içindeki bağlantı dizesini güncelleyin.
 3. `dotnet ef database update` komutuyla migration'ları uygulayın.
 4. `Frontend` klasöründe `npm install` ve `ng serve` komutlarını çalıştırın.
+
+
+---
+
+## 📱 Ekosistem ve Mobil Entegrasyon
+
+Bu proje, uçtan uca bir etkinlik yönetim ekosisteminin parçasıdır. Sistemle tam entegre çalışan, **Flutter** ile geliştirilmiş mobil uygulamaya aşağıdaki bağlantıdan ulaşabilirsiniz:
+
+🔗 **[EventFinder Mobile App (Flutter)](https://github.com/dp-end/event-finder-mobile)**
+
+---
