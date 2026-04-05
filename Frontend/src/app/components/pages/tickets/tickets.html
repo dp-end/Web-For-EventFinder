@@ -1,0 +1,53 @@
+<div class="tickets-container">
+
+  <header class="page-header">
+    <div class="header-left">
+      <button class="back-btn" routerLink="/home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      </button>
+      <div class="title-group">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect><path d="M6 7v10"></path><path d="M18 7v10"></path></svg>
+        <h1>Biletlerim</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="tickets-list">
+
+    <div class="ticket-card" *ngFor="let ticket of tickets">
+
+      <div class="ticket-header">
+        <h3>{{ ticket.title }}</h3>
+        <span class="status-badge" [ngClass]="ticket.statusType">{{ ticket.status }}</span>
+      </div>
+
+      <div class="ticket-body">
+        <div class="detail-row">
+          <span class="icon">📅</span>
+          <p>{{ ticket.date }}</p>
+        </div>
+        <div class="detail-row">
+          <span class="icon">🕒</span>
+          <p>{{ ticket.time }}</p>
+        </div>
+        <div class="detail-row">
+          <span class="icon">📍</span>
+          <p>{{ ticket.location }}</p>
+        </div>
+      </div>
+
+      <div class="ticket-footer">
+        <div class="qr-info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>{{ ticket.id }}</span>
+        </div>
+        <button class="view-btn" (click)="viewTicket(ticket.id)">
+          Bileti Görüntüle
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>

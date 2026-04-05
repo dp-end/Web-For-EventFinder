@@ -1,0 +1,150 @@
+/* Ana Konteyner (Bildirimler sayfası ile aynı standartta) */
+.tickets-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Başlık Alanı */
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-btn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.back-btn:hover { background: #f8fafc; color: #1a202c; }
+
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-group h1 { margin: 0; font-size: 1.5rem; color: #1a202c; }
+
+/* Biletler Listesi */
+.tickets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Biletler arası boşluk */
+}
+
+/* BİLET KARTI TASARIMI */
+.ticket-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.ticket-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+/* Bilet Üst Kısım */
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 15px 24px;
+}
+
+.ticket-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1a202c;
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.active { background: #10b981; color: white; } /* Senin prototipteki tatlı yeşil */
+.status-badge.used { background: #e2e8f0; color: #64748b; } /* Kullanılmış biletler için gri */
+
+/* Bilet Orta Kısım */
+.ticket-body {
+  padding: 0 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-row .icon { font-size: 1.1rem; }
+.detail-row p { margin: 0; font-size: 0.95rem; color: #4a5568; }
+
+/* Bilet Alt Kısım (QR ve Buton) */
+.ticket-footer {
+  padding: 20px 24px;
+  background-color: #f8fafc;
+  border-top: 2px dashed #e2e8f0; /* GERÇEK BİLET EFEKTİ! */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qr-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #718096;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.view-btn {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #1a202c;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.view-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}

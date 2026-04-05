@@ -1,0 +1,27 @@
+#################################
+## Backend (.NET) Gereksizleri ##
+#################################
+**/bin/
+**/obj/
+**/.vs/
+**/TestResults/
+*.user
+*.userosscache
+*.sln.doccache
+*.suo
+
+##################################
+## Frontend (Angular) Gereksizleri ##
+##################################
+**/node_modules/
+**/dist/
+**/.angular/
+**/.vscode/
+.DS_Store
+Thumbs.db
+
+########################
+## Ortak / Diğer      ##
+########################
+.env
+.env.local

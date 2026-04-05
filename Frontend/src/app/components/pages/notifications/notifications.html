@@ -1,0 +1,41 @@
+<div class="notifications-container">
+
+  <header class="page-header">
+    <div class="header-left">
+      <button class="back-btn" routerLink="/home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      </button>
+      <div class="title-group">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <h1>Bildirimler</h1>
+      </div>
+    </div>
+
+    <button class="mark-read-btn" (click)="markAllAsRead()">Tümünü Okundu İşaretle</button>
+  </header>
+
+  <main class="notifications-list">
+
+    <div class="notification-item" *ngFor="let notif of notifications" [class.unread]="!notif.isRead">
+
+      <div class="icon-circle" [ngClass]="notif.type">
+        <span *ngIf="notif.type === 'event'">📅</span>
+        <span *ngIf="notif.type === 'like'">❤️</span>
+        <span *ngIf="notif.type === 'comment'">💬</span>
+        <span *ngIf="notif.type === 'info'">ℹ️</span>
+      </div>
+
+      <div class="notif-content">
+        <div class="notif-title-row">
+          <h4>{{ notif.title }}</h4>
+          <span class="unread-dot" *ngIf="!notif.isRead"></span>
+        </div>
+        <p>{{ notif.message }}</p>
+        <span class="time">{{ notif.time }}</span>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
