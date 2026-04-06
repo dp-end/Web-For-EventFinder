@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jl5YCkhr7bI=",
+  "dgSpecHash": "rju1IHj4O/w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\20220\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\20220\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
@@ -135,9 +135,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "'MimeKit' 2.9.1 paketinde önem derecesi orta olan bilinen bir https://github.com/advisories/GHSA-g7hc-96xr-gvvx güvenlik açığı var",
-      "projectPath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
+      "filePath": "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
       "libraryId": "MimeKit",
       "targetGraphs": [
         "net8.0"

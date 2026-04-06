@@ -2,7 +2,7 @@
   width: 280px;
   height: 100vh;
   background-color: #0f172a; /* Derin lacivert/siyah */
-  color: white;
+ color: white;
   display: flex;
   flex-direction: column;
   padding: 24px 20px;
