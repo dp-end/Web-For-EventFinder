@@ -6508,11 +6508,11 @@
   "project": {
     "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
       "projectName": "CleanArchitecture.Infrastructure",
-      "projectPath": "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\20220\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\20220\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6527,8 +6527,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj": {
-              "projectPath": "C:\\Users\\20220\\Desktop\\webProje\\Backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj"
+            "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj": {
+              "projectPath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj"
             }
           }
         }
@@ -6607,7 +6607,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'MimeKit' 2.9.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-g7hc-96xr-gvvx",
+      "message": "'MimeKit' 2.9.1 paketinde önem derecesi orta olan bilinen bir https://github.com/advisories/GHSA-g7hc-96xr-gvvx güvenlik açığı var",
       "libraryId": "MimeKit",
       "targetGraphs": [
         "net8.0"
