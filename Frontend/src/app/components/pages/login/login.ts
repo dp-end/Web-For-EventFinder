@@ -46,8 +46,12 @@ export class Login {
           // API'den gelen JWT Token'ı tarayıcının hafızasına (LocalStorage) kaydediyoruz
           // Not: Clean Architecture şablonunda token genelde response.data.jwToken içinde döner
           const token = response.data?.jwToken || response.jwToken;
+          const userName = response.data?.userName || response.data?.UserName || response.userName || response.UserName || response.data?.name || response.name || response.data?.email || response.email;
           if (token) {
-            localStorage.setItem('token', token);
+            this.authService.setToken(token);
+          }
+          if (userName) {
+            this.authService.setUserName(userName);
           }
 
           // Giriş başarılıysa Home sayfasına yönlendir!

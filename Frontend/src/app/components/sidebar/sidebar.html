@@ -51,9 +51,9 @@
 
   <div class="user-footer">
     <div class="user-info-group">
-      <div class="avatar">MO</div>
+      <div class="avatar">{{ userName ? userName.charAt(0) : 'U' }}</div>
       <div class="user-details">
-        <h4>Mert Osman</h4>
+        <h4>{{ userName || 'Misafir' }}</h4>
         <p>Yazılım Müh. - 3. Sınıf</p>
       </div>
     </div>

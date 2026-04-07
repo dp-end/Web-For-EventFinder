@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\20220\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\software-web\\event-finder-web\\backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj",
       "projectName": "CleanArchitecture.Core",
-      "projectPath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj",
-      "packagesPath": "C:\\Users\\20220\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\20220\\Desktop\\webProje\\backend\\CleanArchitecture\\CleanArchitecture.Application\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\software-web\\event-finder-web\\backend\\CleanArchitecture\\CleanArchitecture.Application\\CleanArchitecture.Core.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\software-web\\event-finder-web\\backend\\CleanArchitecture\\CleanArchitecture.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\20220\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
